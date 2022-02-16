@@ -1,13 +1,14 @@
      pipeline {
-                    agent any
-                    stages {
-                        stage('Clone') {
-                            steps {
-                                git credentialsId: 'Github', url: 'https://github.com/Ijaz0059/welcometoskillrary.git'
+       agent any
+              stages {
+                   stage('Clone') {
+                         steps {
+                            git credentialsId: 'Github', url: 'https://github.com/Ijaz0059/welcometoskillrary.git'
                             }
                          }
-							stage('Build') {
+                   stage('Build') {
                             steps {
                                 sh "mvn clean install"   
                             }
                          }
+	      }
