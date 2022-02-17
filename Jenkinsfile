@@ -13,7 +13,7 @@
                          }
 		      stage('Deploy to Tomcat'){
 			      steps{
-                               sh "/var/lib/jenkins/workspace/newjob/webapp/target/webapp.war /usr/share/tomcat/webapps"
+                               sh "cp /var/lib/jenkins/workspace/NewJob/webapp/target/webapp.war /usr/share/apache-tomcat-9.0.58/webapps"
 				    
 				   }
 		      }
