@@ -11,11 +11,13 @@
                                 sh "mvn clean install"   
                             }
                          }
-		      stage('Deploy') {
-                            steps {
-                               deploy adapters: [tomcat9(credentialsId: '7aeb140c-c542-4ed9-8a91-bfde64538c62', path: '', url: 'http://3.110.176.91:8090/')], contextPath: null, war: '**/*.war'  
-                            }
-                         }
+		      stage('Deploy to Tomcat'){
+			      steps{
+                               sh "/var/lib/jenkins/workspace/newjob/webapp/target/webapp.war /usr/share/tomcat/webapps"
+				    
+				   }
+		      }
+                      
 		      
 	          }
      }
